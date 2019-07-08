@@ -4,8 +4,8 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                bat "rmdir /s /q my-app"
-                bat "git clone https://github.com/pknowledge/my-app.git"
+                
+                
                 bat "C:\\Users\\pruthviraj.s.surve\\apache-maven-3.6.1\\bin\\mvn -B -DskipTests clean package"
                 
             }
