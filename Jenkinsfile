@@ -16,7 +16,7 @@ pipeline{
                 bat "mvn test"
             }
             post{
-                always{
+                success{
                     junit '**/target/surefire-reports/*.xml'
                 }
             }
