@@ -6,13 +6,14 @@ pipeline{
             steps{
                 
                 
-                bat "C:\\Users\\pruthviraj.s.surve\\apache-maven-3.6.1\\bin\\mvn -B -DskipTests clean package"
+                bat "mvn -B -DskipTests clean"
+                bat "mvn install" 
                 
             }
         }
         stage('Test'){
             steps{
-                bat "C:\\Users\\pruthviraj.s.surve\\apache-maven-3.6.1\\bin\\mvn test"
+                bat "mvn test"
             }
             post{
                 always{
@@ -22,7 +23,7 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                bat "C:\\Users\\pruthviraj.s.surve\\apache-maven-3.6.1\\bin\\mvn package"
+                bat "mvn package"
             }
         }
     }
